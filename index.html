@@ -68,28 +68,28 @@
     </button>
   </main>
 
-  <script>
-    document.getElementById("saveBtn").addEventListener("click", () => {
-      const vcard = [
-        "BEGIN:VCARD","VERSION:3.0",
-        "N:Aldukhayel;Mohammed;;;","FN:Mohammed Aldukhayel",
-        "ORG:Riyadh Schools Misk City",
-        "TITLE:Principal – Boys School",
-        "TEL;TYPE=cell:+966555776010",
-        "EMAIL;TYPE=INTERNET:m.aldakhyel@RSMC.edu.sa",
-        "URL:https://sa.linkedin.com/in/mohammed-aldakhyil-1b18a9135",
-        "END:VCARD",
-      ].join("\\n");
+<script>
+  document.getElementById("saveBtn").addEventListener("click", () => {
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Aldukhayel;Mohammed;;;",
+      "FN:Mohammed Aldukhayel",
+      "ORG:Riyadh Schools Misk City",
+      "TITLE:Principal – Boys School",
+      "TEL;TYPE=CELL,VOICE:+966555776010",
+      "EMAIL;TYPE=INTERNET:m.aldakhyel@RSMC.edu.sa",
+      "URL:https://sa.linkedin.com/in/mohammed-aldakhyil-1b18a9135",
+      "END:VCARD",
+    ].join("\n"); // <-- هنا التعديل المهم
 
-      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Mohammed_Aldukhayel.vcf";
-      a.click();
-      URL.revokeObjectURL(url);
-    });
-  </script>
-</body>
-</html>
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Mohammed_Aldukhayel.vcf";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+</script>
 
